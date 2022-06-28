@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SP</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- CSS Project -->
+    <link href="./css/styles.css" rel="stylesheet" />
+    <!-- Javascript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Javascript Project -->
+    <script src="./scripts/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#modal-atualizar-contato, #modal-confirm-contato, #modal-erro-termo')
+                .modal({ backdrop: 'static', keyboard: false });
+            $('#modal-atualizar-contato').modal('show');
+
+            $("#close-modal-confirm-contato").click(function () {
+                $('#modal-atualizar-contato').modal('show');
+                $('#modal-confirm-contato').modal('hide');
+            });
+
+            $("#close-modal-erro-termo").click(function () {
+                $("#btn-prosseguir").prop("disabled", false);
+                $('#modal-atualizar-contato').modal('show');
+            });
+
+            $("#btn-prosseguir").click(function () {
+                var is_termo_checked = $('#termo-checkbox').is(":checked");
+                if (!is_termo_checked) {
+                    $("#btn-prosseguir").prop("disabled", true);
+                    $('#modal-atualizar-contato').modal('hide');
+                    $('#modal-erro-termo').modal('show');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="modal-atualizar-contato">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title font-big">Atualização de dados de contato.</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form class="modal-form">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row nopadding">
+                            <div class="col">
+                                <div class="row pt-2">
+                                    <div class="col-md-12 mx-auto">
+                                        <form>
+                                            <div class="container nopadding font-small">
+                                                Olá ${primeiro_nome_do_cidadao}, antes de continuar, confira seus dados
+                                                de
+                                                contato e leia o termo de uso e política de privacidade.
+                                            </div>
+                                            <div class="content-form p-3 px-1 mt-4">
+                                                <div class="row">
+                                                    <div class="col-sm-12 font-small">
+                                                        <strong>Dados pessoais</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-1">
+                                                    <div class="col-sm-4 font-small">
+                                                        CPF
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        58681038400
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-sm-4 font-small">
+                                                        NOME
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        Altair Bezerra Rodrigues
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="content-form pt-3 px-1">
+                                                <div class="row">
+                                                    <div class="col-sm-12 font-small">
+                                                        <strong>Contatos</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-1">
+                                                    <div class="col-sm-4 font-small">
+                                                        Telefone celular
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        (11) 2591 2591
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-sm-4 font-small">
+                                                        Telefone residencial
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        (11) 999 999 999
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-sm-4 font-small">
+                                                        Telefone comercial
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        (11) 2591 2591
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2 pb-3">
+                                                    <div class="col-sm-4 font-small">
+                                                        e-mail
+                                                    </div>
+                                                    <div class="col-sm-8 font-small">
+                                                        altairBezerraRodrigues@gmail.com
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--termo de uso-->
+                            <div class="col content-image pt-3" style="background-color: #CDDCEC;">
+                                <p class="secondary-color text-center me-5 font-big"> <strong>TERMO DE USO <br>
+                                        E POLÍTICA DE PRIVACIDADE</strong>
+                                </p>
+
+                                <div class="termo-uso font-small">
+                                    <p><strong>TERMO DE USO E POLÍTICA DE PRIVACIDADE</strong> <br /><br />
+                                        O Estado de São Paulo, tem o propósito de dar concretude a<br />
+                                        um dos princípios fundamentais esculpidos no artigo 37 da <br />
+                                        Constituição Federal, atuando de forma transparente, ética e <br />
+                                        responsável, em benefício dos seus cidadãos. </p>
+
+                                    <p>A seguir, apresentamos o nosso Termo de Uso e a nossa Política de<br />
+                                        Privacidade para que os usuários e titulares de dados pessoais <br />
+                                        compreendam quais são as condições para uso deste Portal.</p>
+
+                                    <p> <strong>TERMO DE USO </strong><br />
+                                        Este TERMO DE USO é aplicável a todos (as) cidadãos(as)<br />
+                                        que acessam o Portal.</p>
+
+                                    <p><strong>Você aceita e concorda com as disposições deste Termo de Uso.<br />
+                                            Leia, atentamente, esse Termos de Uso antes de usar o Portal. <br />
+                                            Caso não concorde com os Termos de Uso, você não deve usar o <br />
+                                            Portal. </strong></p>
+
+                                    <p> <strong>ATUALIZAÇÃO DOS TERMOS DE USO</strong><br />
+                                        Lembramos que o Termo de Uso, assim como os conteúdos e as <br />
+                                        funcionalidades dos nossos canais, poderão ser atualizados, a qualquer <br />
+                                        momento por razões legais, pelo uso de novas tecnologias e <br />
+                                        funcionalidades e sempre que a Subsecretaria de Apoio ao Cidadão, <br />
+                                        Tecnologia e Inovação do Governo do Estado entender necessário, cujas <br />
+                                        alterações você também concorda. </p>
+
+                                    <p> <strong>ACESSO </strong><br />
+                                        Para ter acesso ao conteúdo restrito é necessário que o Usuário faça um <br />
+                                        cadastro fornecendo algumas informações pessoais. <br />
+                                        Certifique-se de que as informações fornecidas estão corretas, pois você <br />
+                                        é responsável pela veracidade delas. Caso haja alguma inconsistência, <br />
+                                        isso impedirá o acesso ao Portal. <br /></p>
+
+                                    <p> <strong>CONTEÚDO ENVIADO PELO USUÁRIO </strong><br />
+                                        O Portal permite que o Usuário envie arquivo com imagens, <br />
+                                        mensagens e fotos.</p>
+
+                                    <p> <strong>RESPONSABILIDADES </strong><br />
+                                        Você é responsável pelo conteúdo que enviou. </p>
+
+                                    <p> <strong>POLÍTICA DE PRIVACIDADE </strong><br />
+                                        A privacidade, a proteção de Dados Pessoais e o seu tratamento de <br />
+                                        forma transparente, ética, segura e responsável são valores essenciais <br />
+                                        para o Governo do Estado de São Paulo, uma vez que coleta, usa, <br />
+                                        compartilha, e trata informações e Dados Pessoais de pessoas físicas e <br />
+                                        pessoas jurídicas, para o desempenho de suas atividades. <br />
+                                        O Estado de São Paulo exerce as atribuições de controlador por <br />
+                                        intermédio dos Secretários de Estado e do Procurador Geral do Estado, <br />
+                                        tem por competência proferir as decisões referentes as requisições de <br />
+                                        dados pessoais o tratamento de dados pessoais, no âmbito da <br />
+                                        Administração Pública Direta. <br />
+                                        Seus direitos, em relação aos Dados Pessoais, estão garantidos, em <br />
+                                        conformidade com o previsto na Lei federal nº 13.709, de 14 de agosto <br />
+                                        de 2018 - Lei Geral de Proteção de Dados Pessoais (LGPD), e Decreto <br />
+                                        nº 65.347, de 09 de dezembro de 2020, que aplica a referida LGPD, no <br />
+                                        âmbito do Estado de São Paulo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Modal footer -->
+                    <div class="modal-footer pb-4" style="padding-top: 0 !important;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input custom-input-switch" type="checkbox"
+                                            id="flexSwitchCheckDefault">
+                                        <label class="form-check-label font-small" for="flexSwitchCheckDefault">Desejo
+                                            receber
+                                            notificações por <strong>SMS</strong>.</label>
+                                    </div>
+                                    <a data-bs-toggle="modal" href="#modal-confirm-contato"
+                                        class="btn btn-primary font-medium mt-3" style=" width: 168px;">Editar
+                                        dados</a>
+                                </div>
+                                <div class="col-lg-6 ps-4">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input custom-input-switch" type="checkbox"
+                                            id="termo-checkbox">
+                                        <label class="form-check-label font-small" for="termo-checkbox">Li e
+                                            aceito o
+                                            <strong>Termo de Uso e Política de Privacidade.</strong>
+                                        </label>
+                                    </div>
+                                    <button type="button btn-sm" class="btn btn-primary font-medium rounded-3 mt-3"
+                                        id="btn-prosseguir" data-bs-dismiss="modal"
+                                        style=" width: 168px;">Prosseguir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Confirm Modal -->
+    <div class="modal" id="modal-confirm-contato">
+        <div class="modal-dialog" role="document" style="width: 545px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-big">Atualizar dados de contato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col font-small  px-5 pb-4 pt-3 text-center">
+                            <p>Você será direcionado ao LOGINSP para atualizar seus dados </br>
+                                de contato e seu acesso ao Sistema LGPD será encerrado. </p>
+
+                            <p>Após atualizar seus dados no LOGINSP acesse novamente o </br>
+                                Sistema LGPD para fazer sua requisição de dados pessoais.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center pb-4">
+                    <button type="button btn-sm" class="btn btn-primary font-medium rounded-3" data-bs-dismiss="modal"
+                        style=" width: 100px !important;">OK</button>
+                    <button type="button btn-sm" class="btn btn-light font-medium rounded-3 w-50"
+                        id="close-modal-confirm-contato" style=" width: 100px !important;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Error Modal -->
+    <div class="modal" id="modal-erro-termo">
+        <div class="modal-dialog" role="document" style="width: 545px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-big">Aceitar termo de uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-sm-12">
+                            <i class="bi bi-x-circle-fill" style="color: #DA1E28;font-size:76px;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col font-small px-5 text-center">
+                            O acesso ao sistema está condicionado ao aceite do </br>
+                            "Termo de Uso e Política e Privacidade.”
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center pb-4">
+                    <button type="button btn-sm" class="btn btn-primary font-medium rounded-3" data-bs-dismiss="modal"
+                        style=" width: 100px !important;" id="close-modal-erro-termo">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

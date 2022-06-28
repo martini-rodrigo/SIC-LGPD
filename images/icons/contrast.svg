@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_222" data-name="Path 222" d="M1116.842,30a10,10,0,1,0,10-10,10,10,0,0,0-10,10"/>
+    </clipPath>
+  </defs>
+  <g id="Icone_-_Contraste" data-name="Icone - Contraste" transform="translate(-1116.842 -20)" clip-path="url(#clip-path)">
+    <rect id="Rectangle_41" data-name="Rectangle 41" width="10" height="20" transform="translate(1126.842 20)" fill="#fff"/>
+    <rect id="Rectangle_42" data-name="Rectangle 42" width="10" height="20" transform="translate(1116.842 20)"/>
+    <path id="Path_221" data-name="Path 221" d="M1126.842,22a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2a10,10,0,1,0,10,10,10,10,0,0,0-10-10"/>
+  </g>
+</svg>

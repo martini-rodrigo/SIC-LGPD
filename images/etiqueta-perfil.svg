@@ -1,0 +1,23 @@
+<svg id="Etiqueta_perfil" data-name="Etiqueta perfil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="50" viewBox="0 0 240 50">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_107" data-name="Rectangle 107" width="30" height="30" transform="translate(0 -0.084)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_225" data-name="Group 225" transform="translate(-915 -160)">
+    <path id="Rectangle_108" data-name="Rectangle 108" d="M20,0H220a20,20,0,0,1,20,20V50a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z" transform="translate(915 160)" fill="#034ea2"/>
+    <g id="Group_223" data-name="Group 223" transform="translate(22 -3)">
+      <g id="Perfil_-_Cidadão" data-name="Perfil - Cidadão" transform="translate(965 173.084)">
+        <g id="Group_220" data-name="Group 220" clip-path="url(#clip-path)">
+          <circle id="Ellipse_1" data-name="Ellipse 1" cx="4.155" cy="4.155" r="4.155" transform="translate(10.799 7.328)" fill="none" stroke="#fff" stroke-width="1"/>
+          <path id="Path_304" data-name="Path 304" d="M31.688,8.13a14.518,14.518,0,0,1-3.7,20.135" transform="translate(-4.73 -1.374)" fill="none" stroke="#fff" stroke-width="1"/>
+          <path id="Path_305" data-name="Path 305" d="M6.741,26.984A14.544,14.544,0,1,1,24.25,3.782" transform="translate(-0.084 -0.084)" fill="none" stroke="#fff" stroke-width="1"/>
+          <path id="Path_306" data-name="Path 306" d="M31.471,6.081a.831.831,0,1,1-.831-.831.831.831,0,0,1,.831.831" transform="translate(-5.038 -0.887)" fill="#fff"/>
+          <path id="Path_307" data-name="Path 307" d="M24.62,30.13c0,.15,0,.3-.008.449a14.53,14.53,0,0,1-16.6.008c0-.15-.008-.3-.008-.457a8.31,8.31,0,1,1,16.62,0Z" transform="translate(-1.352 -3.688)" fill="none" stroke="#fff" stroke-width="1"/>
+        </g>
+      </g>
+      <text id="Cidadão" transform="translate(1005 193.5)" fill="#fff" font-size="14" font-family="Verdana"><tspan x="0" y="0">Cidadão</tspan></text>
+    </g>
+  </g>
+  <rect id="Rectangle_460" data-name="Rectangle 460" width="240" height="2" transform="translate(0 48)" fill="#022751"/>
+</svg>
