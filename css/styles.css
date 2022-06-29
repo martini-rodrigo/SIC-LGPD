@@ -520,7 +520,7 @@ input[type='text'] {
     display: -ms-grid;
     -ms-grid-columns: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px 50px;
+    gap: 20px 60px;
     padding: 18px;
 }
 
@@ -532,4 +532,9 @@ input[type='text'] {
 
 .form-check-input:checked {
     background-color: #34C759;
+}
+
+.grid-item-title {
+    width: 291px;
+    position: absolute;
 }

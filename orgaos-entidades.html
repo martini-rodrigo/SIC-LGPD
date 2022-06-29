@@ -27,11 +27,24 @@
     <script>
         $(document).ready(function () {
 
+            // count total checkbox selected
+            $('.total-checkbox-selected').text(0);
+            $('input[type="checkbox"]').each(function () {
+                $(this).click(function () {
+                    var selected_grid = $(this).closest('.grid-item-column');
+                    var total_checkbox_selected = selected_grid.find('input[type="checkbox"]:checked').length;
+                    selected_grid.find('.total-checkbox-selected')
+                        .text(total_checkbox_selected);
+                });
+            });
+            // show box with checkbox 
             $('.bi-chevron-compact-down').each(function () {
                 $(this).click(function () {
                     $('.grid-item-select').css({ "visibility": "hidden" });
                     var selected_grid = $(this).closest(".grid-item-column");
 
+                    selected_grid.find('.grid-item-title')
+                        .css({"left": getLeftPositionTotalCheckbox(selected_grid)});
                     selected_grid.find('.grid-item-select')
                         .css({
                             "visibility": "visible",
@@ -41,7 +54,7 @@
                         });
                 });
             });
-
+            // hidden box with checkbox
             $('.bi-chevron-compact-up').each(function () {
                 $(this).click(function () {
                     var selected_grid = $(this).closest(".grid-item-column");
@@ -71,6 +84,18 @@
                     }
                 }
                 return 12;
+            }
+
+            function getLeftPositionTotalCheckbox(selected_grid) {
+                var position = selected_grid.position();
+                var total_checkbox = selected_grid.find('input[type=checkbox]').length;
+                if (total_checkbox == 2) {
+                    var index = selected_grid.index() + 1;
+                    if (index % 3 === 0) {
+                        return 350;
+                    }
+                }
+                return selected_grid.position().left;
             }
         });
     </script>
@@ -109,24 +134,32 @@
                         <div class="grid-item-row">
                             <!-- INICIO repetir column para criar proximo box--->
                             <div class="grid-item-column">
-                                <div class="row h-100" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                <div class="row h-100">
                                     <div class="col-sm-9 my-auto"> CASA CIVIL</div>
-                                    <div class="col-sm-3 my-auto text-end">
-                                        +99
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
                                         <a href="#"><i class="bi bi-chevron-compact-down black"
                                                 style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
-                                    <div class="row ps-1 pt-2 pb-2">
-                                        <div class="col-sm-8 my-auto"> CASA CIVIL</div>
-                                        <div class="col-sm-4 my-auto text-end">
-                                            +99
-                                            <a href="#"><i class="bi bi-chevron-compact-up black"
-                                                    style="font-size: 22px"></i></a>
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto"> CASA CIVIL</div>
+                                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="grid-input-row">
+                                    <div class="grid-input-row mt-4">
                                         <!-- INICIO repetir column para criar proximo checkbox--->
                                         <div class="grid-input-column">
                                             <div class="form-check form-switch">
