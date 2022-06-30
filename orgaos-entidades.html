@@ -29,6 +29,16 @@
     <script>
         $(document).ready(function () {
 
+            // valid checkbox required
+            $("#send-button").click(function (e) {
+                e.preventDefault();
+                var total_checkbox_selected = $('.grid-item-row')
+                    .find('input[type="checkbox"]:checked').length;
+                if (total_checkbox_selected <= 0) {
+                    $('#modal-checkbox-required').modal('show');
+                }
+            });
+
             // count total checkbox selected
             $('.total-checkbox-selected').text(0);
             $('input[type="checkbox"]').each(function () {
@@ -184,7 +194,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 mx-auto mt-5 mb-5 text-center">
-                        <button type="button btn-sm" class="btn btn-primary font-medium" data-bs-dismiss="modal"
+                        <button type="button btn-sm" class="btn btn-primary font-medium" id="send-button"
                             style=" width: 171px;">Enviar formulário</button>
                     </div>
                 </div>
@@ -193,6 +203,36 @@
     </div>
     <!-- FOOTER -->
     <div id="import-footer"></div>
+
+    <!-- The Error Modal -->
+    <div class="modal" id="modal-checkbox-required" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 545px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-big">Aceitar termo de uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-sm-12">
+                            <i class="bi bi-x-circle-fill" style="color: #DA1E28;font-size:76px;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col font-small px-5 text-center">
+                            Selecione ao menos uma entidade <br>
+                            para solicitar seus dados.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center pb-4">
+                    <button type="button btn-sm" class="btn btn-primary font-medium rounded-3" data-bs-dismiss="modal"
+                        style=" width: 100px !important;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -546,3 +546,6 @@ tr:nth-child(even) {
 .empty-row {
     height: 30px;
 }
+.modal-backdrop.show {
+    opacity: 0.8;
+}

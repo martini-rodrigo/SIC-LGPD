@@ -29,6 +29,6 @@ $(function () {
         source: data, // specify the data source
         minLength: 1 // minimum number of characters a user must type before a search   
     });
-    //$('#modal').modal(options);
+    $('#modal').modal(options);
 });
 
