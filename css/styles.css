@@ -538,3 +538,11 @@ input[type='text'] {
     width: 291px;
     position: absolute;
 }
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.empty-row {
+    height: 30px;
+}
