@@ -22,6 +22,8 @@
         crossorigin="anonymous"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <!-- Javascript Project -->
     <script src="./scripts/script.js"></script>
     <script>
@@ -44,7 +46,7 @@
                     var selected_grid = $(this).closest(".grid-item-column");
 
                     selected_grid.find('.grid-item-title')
-                        .css({"left": getLeftPositionTotalCheckbox(selected_grid)});
+                        .css({ "left": getLeftPositionTotalCheckbox(selected_grid) });
                     selected_grid.find('.grid-item-select')
                         .css({
                             "visibility": "visible",
@@ -89,6 +91,9 @@
             function getLeftPositionTotalCheckbox(selected_grid) {
                 var position = selected_grid.position();
                 var total_checkbox = selected_grid.find('input[type=checkbox]').length;
+                if (total_checkbox == 1) {
+                    return 2;
+                }
                 if (total_checkbox == 2) {
                     var index = selected_grid.index() + 1;
                     if (index % 3 === 0) {
@@ -121,9 +126,10 @@
                     </div>
                     <div class="col-md-12 mx-auto mb-4 mt-3">
                         <div class="form-group ">
-                            <label for="entidade" class="font-medium">Selecione os Órgãos e Entidades abaixo que deseja
+                            <label for="autocomplete" class="font-medium">Selecione os Órgãos e Entidades abaixo que
+                                deseja
                                 requisitar<br />seus dados pessoais</label>
-                            <input type="text" class="form-control mt-1" id="entidade" style="width: 440px;"
+                            <input type="text" class="form-control mt-1" id="autocomplete" style="width: 440px;"
                                 placeholder="Pesquise as entidades e órgãos que deseja encontrar">
                         </div>
                     </div>
