@@ -8,8 +8,6 @@ $(function () {
     });
     $('#import-footer').load("footer.html");
 
-    $('#modal').modal(options);
-
     $('.dropdown-toggle').dropdown();
 });
 

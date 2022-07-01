@@ -14,18 +14,50 @@
     <!-- CSS Project -->
     <link href="./css/styles.css" rel="stylesheet" />
     <!-- Javascript Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <!-- Javascript Project -->
     <script src="./scripts/script.js"></script>
     <script>
         $(document).ready(function () {
+            var data = [
+                "SECRETARIA DOS TRANSPORTES METROPOLITANOS",
+                "SECRETARIA DE LOGÍSTICA E TRANSPORTES",
+                "SECRETARIA DA JUSTIÇA E CIDADANIA",
+                "SECRETARIA DA SAÚDE",
+                "SECRETARIA DA HABITAÇÃO",
+                "SEC. DOS DIREITOS DA PESSOA COM DEFICIÊNCIA",
+                "SECRETARIA DA CULTURA E ECONOMIA",
+                "SECRETARIA DE DESENVOLVIMENTO REGIONAL",
+                "SECRETARIA DE TURISMO",
+                "SECRETARIA DA SEGURANÇA PÚBLICA",
+                "SECRETARIA DA ADMINISTRAÇÃO PENITENCIÁRIA",
+                "CIA.PAULISTA DE SECURITIZAÇÃO-CP",
+                "SECRETARIA DE ESPORTES"
+            ];
+            $("#autocomplete").autocomplete({
+                source: data, // specify the data source
+                minLength: 1 // minimum number of characters a user must type before a search   
+            });
+
+
+            // valid checkbox required
+            $("#send-button").click(function (e) {
+                e.preventDefault();
+                var total_checkbox_selected = $('.grid-item-row')
+                    .find('input[type="checkbox"]:checked').length;
+                if (total_checkbox_selected <= 0) {
+                    $('#modal-checkbox-required').modal('show');
+                }
+            });
 
             // count total checkbox selected
             $('.total-checkbox-selected').text(0);
@@ -44,7 +76,7 @@
                     var selected_grid = $(this).closest(".grid-item-column");
 
                     selected_grid.find('.grid-item-title')
-                        .css({"left": getLeftPositionTotalCheckbox(selected_grid)});
+                        .css({ "left": getLeftPositionTotalCheckbox(selected_grid) });
                     selected_grid.find('.grid-item-select')
                         .css({
                             "visibility": "visible",
@@ -79,7 +111,7 @@
                     return position.left;
                 } else if (total_checkbox == 2) {
                     var index = selected_grid.index() + 1;
-                    if (index % 3 === 0) {
+                    if (index % 3 === 0 || index % 3 === 2) {
                         return 356;
                     }
                 }
@@ -89,10 +121,16 @@
             function getLeftPositionTotalCheckbox(selected_grid) {
                 var position = selected_grid.position();
                 var total_checkbox = selected_grid.find('input[type=checkbox]').length;
+                if (total_checkbox == 1) {
+                    return 2;
+                }
                 if (total_checkbox == 2) {
                     var index = selected_grid.index() + 1;
                     if (index % 3 === 0) {
                         return 350;
+                    }
+                    if (index % 3 === 2) {
+                        return 2;
                     }
                 }
                 return selected_grid.position().left;
@@ -121,9 +159,10 @@
                     </div>
                     <div class="col-md-12 mx-auto mb-4 mt-3">
                         <div class="form-group ">
-                            <label for="entidade" class="font-medium">Selecione os Órgãos e Entidades abaixo que deseja
+                            <label for="autocomplete" class="font-medium">Selecione os Órgãos e Entidades abaixo que
+                                deseja
                                 requisitar<br />seus dados pessoais</label>
-                            <input type="text" class="form-control mt-1" id="entidade" style="width: 440px;"
+                            <input type="text" class="form-control mt-1" id="autocomplete" style="width: 440px;"
                                 placeholder="Pesquise as entidades e órgãos que deseja encontrar">
                         </div>
                     </div>
@@ -170,6 +209,15 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
                                         <!-- FIM repetir column para criar proximo checkbox--->
                                     </div>
                                 </div>
@@ -178,7 +226,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 mx-auto mt-5 mb-5 text-center">
-                        <button type="button btn-sm" class="btn btn-primary font-medium" data-bs-dismiss="modal"
+                        <button type="button btn-sm" class="btn btn-primary font-medium" id="send-button"
                             style=" width: 171px;">Enviar formulário</button>
                     </div>
                 </div>
@@ -187,6 +235,36 @@
     </div>
     <!-- FOOTER -->
     <div id="import-footer"></div>
+
+    <!-- The Error Modal -->
+    <div class="modal" id="modal-checkbox-required" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 545px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-big">Selecione uma opção</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-sm-12">
+                            <i class="bi bi-x-circle-fill" style="color: #DA1E28;font-size:76px;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col font-small px-5 text-center">
+                            Selecione ao menos uma entidade <br>
+                            para solicitar seus dados.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center pb-4">
+                    <button type="button btn-sm" class="btn btn-primary font-medium rounded-3" data-bs-dismiss="modal"
+                        style=" width: 100px !important;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
