@@ -550,6 +550,14 @@ tr:nth-child(even) {
 .empty-row {
     height: 30px;
 }
+
 .modal-backdrop.show {
     opacity: 0.8;
+}
+
+.content-protocol {
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    width: 314px;
+    height: 146px;
 }
