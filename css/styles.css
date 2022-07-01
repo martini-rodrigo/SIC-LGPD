@@ -539,6 +539,10 @@ input[type='text'] {
     position: absolute;
 }
 
+tr:nth-child(odd) {
+    background-color: #E6EDF6;
+}
+
 tr:nth-child(even) {
     background-color: #FFFFFF;
 }
