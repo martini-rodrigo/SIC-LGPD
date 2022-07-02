@@ -1,5 +1,5 @@
 * {
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Verdana', Arial, Helvetica, Gotham, sans-serif, 'sans-serif';
 }
 
 .bg-primary-color {
@@ -560,4 +560,26 @@ tr:nth-child(even) {
     border-radius: 30px;
     width: 314px;
     height: 146px;
+}
+.search-autocomplete{
+    position: relative;
+    z-index: 1000;
+}
+.ui-autocomplete {
+    padding-top: 1.5em !important;
+    padding-bottom: 0.5em !important;
+    border-radius: 10px;
+    position: absolute;
+    width: 654px;
+    top: 18.8em !important;
+}
+
+#autocomplete {
+    font: normal normal normal 12px/17px Verdana;
+}
+
+li.ui-menu-item {
+    padding-top: 0.2em;
+    padding-left: 0.5em;
+    font: normal normal normal 12px/17px Verdana;
 }
