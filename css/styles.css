@@ -381,6 +381,10 @@
     color: #BFBFBF;
     margin-top: 1.2em;
 }
+.modal-alert{
+    min-width: 545px;
+    height: 365px;
+}
 
 .modal-form {
     background-color: #CDDCEC;
@@ -561,10 +565,12 @@ tr:nth-child(even) {
     width: 314px;
     height: 146px;
 }
-.search-autocomplete{
+
+.search-autocomplete {
     position: relative;
     z-index: 1000;
 }
+
 .ui-autocomplete {
     padding-top: 1.5em !important;
     padding-bottom: 0.5em !important;
@@ -582,4 +588,26 @@ li.ui-menu-item {
     padding-top: 0.2em;
     padding-left: 0.5em;
     font: normal normal normal 12px/17px Verdana;
+}
+
+.modal-header .bi-x-lg:hover {
+    background-color: red !important;
+    border-color: red !important;
+    border-radius: 0px 20px 0px 0px;
+    padding: 0.6em 1.1em 0.3em 1.1em;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.modal-header .bi-x-lg {
+    background-color: #ffffff !important;
+    color: #000000;
+    border: none;
+    padding: 0.3em 1.1em 0 0;
+    border-radius: 0px 20px 0px 0px;
+    font-size: 1.2em;
+}
+
+.modal-header {
+    padding-right: 0 !important;
 }
