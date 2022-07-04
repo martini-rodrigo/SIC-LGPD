@@ -398,8 +398,9 @@
 }
 
 .modal-header {
-    border-bottom: 4px solid #022751;
-    height: 50px;
+    border-bottom: 4px solid #034EA2;
+    padding: 1rem 0rem !important;
+    height: 50px !important;
 }
 
 .modal-title,
@@ -407,7 +408,7 @@
     text-align: left;
     letter-spacing: 0px;
     color: #034EA2;
-    margin-left: 1.2em;
+    margin: 20px 0px 10px 20px;
 }
 
 .btn-primary,
@@ -610,4 +611,8 @@ li.ui-menu-item {
 
 .modal-header {
     padding-right: 0 !important;
+}
+
+.column-one {
+    width: 125px
 }
