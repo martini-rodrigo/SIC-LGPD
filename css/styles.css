@@ -105,12 +105,6 @@
     border-bottom: none;
 }
 
-/* FOOTER */
-#footer {
-    border-bottom: 0.5em solid #014EA2;
-    padding-top: 5em;
-    margin-top: 0.9em !important;
-}
 
 /* DROPDOWN MENU */
 
@@ -284,7 +278,11 @@
 }
 
 #import-footer {
-    margin-top: 11em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 1.2em;
 }
 
 .termo-uso {
