@@ -419,5 +419,6 @@ li.ui-menu-item {
 }
 
 .column-one {
-    width: 125px
+    width: 143px;
+    margin-right: -2px;    
 }
