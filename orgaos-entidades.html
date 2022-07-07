@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <!-- Javascript Project -->
     <script src="./scripts/script.js"></script>
+    <style>
+        .div-shadow {
+            margin-top: 40px;
+        }
+    </style>
     <script>
         $(document).ready(function () {
 
@@ -156,19 +161,20 @@
         <form class=" justify-content-start">
             <div id="content">
                 <div class="row ps-4 pe-4">
-                    <div class="col-md-12 mx-auto mt-3 title font-big">
+                    <div class="col-md-12 mx-auto mt-3 title font-big-medium ">
                         Requisite seus dados pessoais
                     </div>
                     <div class="col-md-12 mx-auto mb-4 mt-3 search-autocomplete">
                         <div class="form-group ">
-                            <label for="autocomplete" class="font-medium">Selecione os Órgãos e Entidades abaixo que
-                                deseja
-                                requisitar<br />seus dados pessoais</label>
-                            <input type="text" class="form-control mt-1" id="autocomplete" style="width: 440px;"
+                            <label for="autocomplete" class="font-small"><b>Selecione os Órgãos e Entidades abaixo que
+                                    deseja
+                                    requisitar<br />seus dados pessoais</b></label>
+                            <input type="text" class="form-control mt-1" id="autocomplete"
+                                style="width: 440px; height: 40px;"
                                 placeholder="Pesquise as entidades e órgãos que deseja encontrar">
                         </div>
                     </div>
-                    <div class="col-md-12 mx-auto mb-1 title font-big">
+                    <div class="col-md-12 mx-auto mb-1 mt-0 title font-big-medium">
                         Órgãos e Entidades
                     </div>
                     <div class="col-md-12 mx-auto nopadding">
@@ -176,8 +182,8 @@
                             <!-- INICIO repetir column para criar proximo box--->
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
                                         <a href="#"><i class="bi bi-chevron-compact-down black"
@@ -189,8 +195,9 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto"> CASA CIVIL</div>
-                                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
                                                         <a href="#"><i class="bi bi-chevron-compact-up black"
@@ -200,8 +207,56 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="grid-input-row mt-4">
+                                    <div class="grid-input-row div-shadow">
                                         <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="grid-input-column">
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input custom-input-switch" type="checkbox"
@@ -211,14 +266,1149 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
                                         <!-- FIM repetir column para criar proximo checkbox--->
                                     </div>
                                 </div>
                             </div>
-                            <!-- FIM repetir column para criar proximo box--->                         
+                            <!-- FIM repetir column para criar proximo box--->
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> SECRETARIA DOS TRANSPORTES METROPOLITANOS
+                                    </div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> SECRETARIA DOS
+                                                        TRANSPORTES METROPOLITANOS</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item-column">
+                                <div class="row h-100">
+                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    </div>
+                                    <div class="col-sm-2 my-auto">
+                                        <a href="#"><i class="bi bi-chevron-compact-down black"
+                                                style="font-size: 22px"></i></a>
+                                    </div>
+                                </div>
+                                <div class="grid-item-select mt-5">
+                                    <div class="row ps-1 pt-3 pb-1">
+                                        <div class="col-sm-12 my-auto" style="position: relative;">
+                                            <div class="grid-item-title">
+                                                <div class="row h-100">
+                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div
+                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                    </div>
+                                                    <div class="col-sm-2 my-auto">
+                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                                style="font-size: 22px"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-input-row div-shadow">
+                                        <!-- INICIO repetir column para criar proximo checkbox--->
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- FIM repetir column para criar proximo checkbox--->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mx-auto mt-5 mb-5 text-center">
+                    <div class="col-md-12 mx-auto mt-4 mb-5 text-center">
                         <button type="button btn-sm" class="btn btn-primary font-medium" id="send-button"
                             style=" width: 171px;">Enviar formulário</button>
                     </div>
