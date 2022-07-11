@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g id="Erro" transform="translate(15834 22536)">
+    <path id="Path" d="M50,0A49.692,49.692,0,0,0,0,50a49.692,49.692,0,0,0,50,50,49.692,49.692,0,0,0,50-50A49.692,49.692,0,0,0,50,0Z" transform="translate(-15834 -22536)" fill="#da1e28"/>
+    <path id="Path-2" data-name="Path" d="M44.286,50,0,5.714,5.714,0,50,44.286Z" transform="translate(-15808.857 -22512)" fill="#fff"/>
+    <path id="Inner_Fill" data-name="Inner Fill" d="M5.714,50,50,5.714,44.286,0,0,44.286Z" transform="translate(-15808.857 -22512)" fill="#fff"/>
+  </g>
+</svg>

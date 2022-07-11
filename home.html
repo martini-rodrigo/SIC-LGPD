@@ -11,6 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- CSS Project -->
     <link href="./css/styles.css" rel="stylesheet" />
     <!-- JQuery -->
@@ -24,6 +25,36 @@
         crossorigin="anonymous"></script>
     <!-- Javascript Project -->
     <script src="./scripts/script.js"></script>
+    <style>
+        .menu-header {
+            padding-bottom: 1.8rem !important;
+            padding-top: 1.8rem !important;
+        }
+
+        .menu-header:hover {
+            background-color: #034EA2 !important;
+        }
+
+        .menu-item {
+            padding-top: 1.3rem !important;
+            padding-bottom: 1.3rem !important
+        }
+
+        .nav-link:focus,
+        .nav-link:hover {
+            background-color: #022751;
+            text-decoration: none !important;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            background-color: #022751;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,31 +65,40 @@
     <div class="container">
         <div class="row" id="identification-bar">
             <div class="col profile d-flex justify-content-center">
-                <img src="images/etiqueta-perfil.svg" alt="Perfil" />
+                <img id="etiqueta-perfil" src="images/etiqueta-perfil.svg" alt="Perfil" />
             </div>
         </div>
     </div>
     <div class="container" style="min-height:50vh">
         <div id="content">
             <div class="row justify-content-center pt-4">
-                <div class="col-5 pt-5 secondary-color text-center" style="font: normal normal bold 20px/24px Verdana;">
+                <div class="col-5 pt-5 secondary-color text-center font-big">
                     <strong>
-                        <p>Você possui acesso ao perfil abaixo, </br>
-                            clique no link que deseja acessar.</p>
+                        <p>Clique no link que <br>deseja acessar.</p>
                     </strong>
                 </div>
             </div>
             <div class="row justify-content-center pt-4">
                 <div class="col-4">
                     <div class="nav flex-column nav-pills rounded-4" id="v-pills-tab" role="tablist"
-                        aria-orientation="vertical">
-                        <a class="nav-link rounded-0 header-v-pills-tab"><strong>Acessar SIC.SP</strong></a>
-                        <a class="nav-link rounded-0" id="v-pills-profile-tab" data-toggle="pill"
+                        aria-orientation="vertical" style="width: 350px;">
+                        <a class="nav-link rounded-0 header-v-pills-tab menu-header"
+                            style="cursor: default;"><strong>Sistema
+                                LGPD</strong></a>
+                        <a class="nav-link rounded-0 menu-item" id="v-pills-profile-tab" data-toggle="pill"
+                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"
+                            style="padding-left: 50px;">Requisitar dados pessoais
+                            <i class="glyphicon glyphicon-menu-right" style="margin-left: 30px;"></i>
+                        </a>
+                        <a class="nav-link rounded-0 menu-item" id="v-pills-profile-tab" data-toggle="pill"
                             href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false">Adicionar Requisição</a>
-                        <a class="nav-link rounded-0" id="v-pills-messages-tab" data-toggle="pill"
-                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                            aria-selected="false">Listagem de Requisições</a>
+                            aria-selected="false">Requisitar dados de outra pessoa
+                            <i class="glyphicon glyphicon-menu-right" style="margin-left: 10px;"></i>
+                        </a>
+                        <a class="nav-link rounded-0 menu-item" id="v-pills-messages-tab" data-toggle="pill"
+                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"
+                            style="padding-left: 74px;">Consulta de requisições <i
+                                class="glyphicon glyphicon-menu-right" style="margin-left: 22px;"></i></a>
                     </div>
                 </div>
             </div>

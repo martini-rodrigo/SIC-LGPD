@@ -30,6 +30,16 @@
         .div-shadow {
             margin-top: 40px;
         }
+
+        .icone-pesquisa {
+            background-image: url("images/Pesquisa.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        a {
+            text-decoration: none;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -48,13 +58,27 @@
                 "SECRETARIA DA SEGURANÇA PÚBLICA",
                 "SECRETARIA DA ADMINISTRAÇÃO PENITENCIÁRIA",
                 "CIA.PAULISTA DE SECURITIZAÇÃO-CP",
+                "SECRETARIA DE ESPORTES",
+                "SECRETARIA DE TURISMO",
+                "SECRETARIA DA SEGURANÇA PÚBLICA",
+                "SECRETARIA DA ADMINISTRAÇÃO PENITENCIÁRIA",
+                "CIA.PAULISTA DE SECURITIZAÇÃO-CP",
                 "SECRETARIA DE ESPORTES"
             ];
             $("#autocomplete").autocomplete({
                 source: data, // specify the data source
-                minLength: 1 // minimum number of characters a user must type before a search   
+                minLength: 3 // minimum number of characters a user must type before a search   
             });
 
+            $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+                var t = String(item.value).replace(
+                    new RegExp(this.term, "gi"),
+                    "<label style=\"color: black\"><strong>$&</strong></label>");
+                return $("<li></li>")
+                    .data("item.autocomplete", item)
+                    .append("<a style=\"color: #bfbfbf\">" + t + "</a>")
+                    .appendTo(ul)
+            };
 
             // valid checkbox required
             $("#send-button").click(function (e) {
@@ -67,17 +91,26 @@
             });
 
             // count total checkbox selected
-            $('.total-checkbox-selected').text(0);
+            $('.total-checkbox-selected').text('');
             $('input[type="checkbox"]').each(function () {
                 $(this).click(function () {
                     var selected_grid = $(this).closest('.grid-item-column');
                     var total_checkbox_selected = selected_grid.find('input[type="checkbox"]:checked').length;
+                    var total_checks = '';
+
+                    if (total_checkbox_selected > 99)
+                        total_checks = '+99'
+                    else if (total_checkbox_selected == 0)
+                        total_checks = ''
+                    else
+                        total_checks = total_checkbox_selected
+
                     selected_grid.find('.total-checkbox-selected')
-                        .text(total_checkbox_selected);
+                        .text(total_checks);
                 });
             });
             // show box with checkbox 
-            $('.bi-chevron-compact-down').each(function () {
+            $('.bi-chevron-down').each(function () {
                 $(this).click(function () {
                     $('.grid-item-select').css({ "visibility": "hidden" });
                     var selected_grid = $(this).closest(".grid-item-column");
@@ -94,7 +127,7 @@
                 });
             });
             // hidden box with checkbox
-            $('.bi-chevron-compact-up').each(function () {
+            $('.bi-chevron-up').each(function () {
                 $(this).click(function () {
                     var selected_grid = $(this).closest(".grid-item-column");
                     selected_grid.find('.grid-item-select').css({ "visibility": "hidden" });
@@ -169,8 +202,8 @@
                             <label for="autocomplete" class="font-small"><b>Selecione os Órgãos e Entidades abaixo que
                                     deseja
                                     requisitar<br />seus dados pessoais</b></label>
-                            <input type="text" class="form-control mt-1" id="autocomplete"
-                                style="width: 440px; height: 40px;"
+                            <input type="text" class="form-control mt-1 icone-pesquisa customized-scrollbar"
+                                id="autocomplete" style="width: 440px; height: 40px;"
                                 placeholder="Pesquise as entidades e órgãos que deseja encontrar">
                         </div>
                     </div>
@@ -182,12 +215,11 @@
                             <!-- INICIO repetir column para criar proximo box--->
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -195,12 +227,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -285,13 +317,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> SECRETARIA DOS TRANSPORTES METROPOLITANOS
-                                    </div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> SECRETARIA DOS TRANSPORTES METROPOLITANOS</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -299,13 +329,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> SECRETARIA DOS
-                                                        TRANSPORTES METROPOLITANOS</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> SECRETARIA DOS TRANSPORTES METROPOLITANOS</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -389,12 +418,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -402,12 +430,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -491,12 +519,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -504,12 +531,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -593,12 +620,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -606,12 +632,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -695,12 +721,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -708,12 +733,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -797,12 +822,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -810,12 +834,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -899,12 +923,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -912,12 +935,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -1001,12 +1024,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -1014,12 +1036,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -1103,12 +1125,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -1116,12 +1137,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -1205,12 +1226,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -1218,12 +1238,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -1307,12 +1327,11 @@
 
                             <div class="grid-item-column">
                                 <div class="row h-100">
-                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
-                                    <div class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
+                                    <div class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                     </div>
                                     <div class="col-sm-2 my-auto">
-                                        <a href="#"><i class="bi bi-chevron-compact-down black"
-                                                style="font-size: 22px"></i></a>
+                                        <a href="#"><i class="bi bi-chevron-down black" style="font-size: 22px"></i></a>
                                     </div>
                                 </div>
                                 <div class="grid-item-select mt-5">
@@ -1320,12 +1339,12 @@
                                         <div class="col-sm-12 my-auto" style="position: relative;">
                                             <div class="grid-item-title">
                                                 <div class="row h-100">
-                                                    <div class="col-sm-9 my-auto font-medium"> CASA CIVIL</div>
+                                                    <div class="col-sm-8 my-auto font-medium"> CASA CIVIL</div>
                                                     <div
-                                                        class="col-sm-1 my-auto text-end total-checkbox-selected font-big-normal">
+                                                        class="col-sm-2 my-auto text-end total-checkbox-selected font-big-normal">
                                                     </div>
                                                     <div class="col-sm-2 my-auto">
-                                                        <a href="#"><i class="bi bi-chevron-compact-up black"
+                                                        <a href="#"><i class="bi bi-chevron-up black"
                                                                 style="font-size: 22px"></i></a>
                                                     </div>
                                                 </div>
@@ -1369,6 +1388,35 @@
                                                     id="flexSwitchCheckDefault">
                                                 <label class="form-check-label font-medium"
                                                     for="flexSwitchCheckDefault">CASA CIVIL
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA ADMINISTRAÇÃO
+                                                    PENITENCIARIA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">SECRETARIA DA EDUCAÇÃO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="grid-input-column">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input custom-input-switch" type="checkbox"
+                                                    id="flexSwitchCheckDefault">
+                                                <label class="form-check-label font-medium"
+                                                    for="flexSwitchCheckDefault">FUND.PROF.DR. MANOEL PEDRO
+                                                    PIMENTEL-FUNAP
                                                 </label>
                                             </div>
                                         </div>

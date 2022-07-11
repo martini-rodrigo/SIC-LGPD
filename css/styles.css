@@ -30,6 +30,10 @@
   font: normal normal normal 14px/17px Verdana;
 }
 
+.font-home-menu-header {
+  font: normal normal bold 18px/22px Verdana;
+}
+
 .font-big-medium {
   font: normal normal bold 20px/22px Verdana;
 }
@@ -305,6 +309,10 @@
     margin-bottom: 1.2em;
 } */
 
+#import-footer {
+  margin-top: 70px;
+}
+
 .termo-uso {
   max-height: 304px;
   width: 450px;
@@ -404,6 +412,9 @@ tr:nth-child(even) {
   position: absolute;
   width: 654px;
   top: 18.8em !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 335px;
 }
 
 #autocomplete {
@@ -414,6 +425,7 @@ li.ui-menu-item {
   padding-top: 0.2em;
   padding-left: 0.5em;
   font: normal normal normal 12px/17px Verdana;
+  /*color: #bfbfbf;*/
 }
 
 .modal-header .bi-x-lg:hover {
@@ -445,4 +457,21 @@ li.ui-menu-item {
 
 .ajuste-header {
   height: 66px !important;
+}
+
+.btn-primary:hover {
+  background-color: #022751;
+}
+.btn-light:hover {
+  color: white;
+  background-color: #022751;
+}
+
+html {
+  margin-bottom: 20px;
+}
+
+#tabela-resultado td {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
